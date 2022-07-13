@@ -35,5 +35,15 @@ Our proposed pretraining pipeline is efficient, accessible, and leads to SoTA re
 
 1. Install pytorch with GPU support `pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
 2. Install dependencies `pip install -r requirements.txt`
-3. Rename `.env.example` to `.env` and fill the vars
+3. Rename `.env.example` to `.env` and fill the vars with keycloak settings
 4. Test project with `uvicorn main:app --reload`
+
+# Using Docker
+
+## Build image
+
+- `docker build -t image-classifier:v1 .`
+
+## Run with docker compose
+
+- `docker compose up -d`
