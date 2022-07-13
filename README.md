@@ -30,3 +30,10 @@ Our proposed pretraining pipeline is efficient, accessible, and leads to SoTA re
       primaryClass={cs.CV}
 }
 ```
+
+# Instructions
+
+1. Install pytorch with GPU support `pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
+2. Install dependencies `pip install -r requirements.txt`
+3. Rename `.env.example` to `.env` and fill the vars
+4. Test project with `uvicorn main:app --reload`
