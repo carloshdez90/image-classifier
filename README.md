@@ -37,6 +37,7 @@ Our proposed pretraining pipeline is efficient, accessible, and leads to SoTA re
 2. Install dependencies `pip install -r requirements.txt`
 3. Rename `.env.example` to `.env` and fill the vars with keycloak settings
 4. Test project with `uvicorn main:app --reload`
+5. Download model into src_file/classes `wget https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/ImageNet_21K_P/models/timm/vit_base_patch16_224_in21k_miil.pth`
 
 # Using Docker
 
@@ -47,3 +48,7 @@ Our proposed pretraining pipeline is efficient, accessible, and leads to SoTA re
 ## Run with docker compose
 
 - `docker compose up -d`
+
+### Others commands
+
+- `cp ~/.cache/torch/hub/checkpoints/vit_base_patch16_224_in21k_miil.pth src_files/classes/`

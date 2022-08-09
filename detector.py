@@ -9,7 +9,6 @@ import os
 import urllib
 from argparse import Namespace
 import torch
-from PIL import Image
 from timm.data import resolve_data_config
 from timm.data.transforms_factory import create_transform
 from src_files.semantic.semantics import ImageNet21kSemanticSoftmax
@@ -30,8 +29,12 @@ def analyze_image(image):
     ############### Loading (ViT) model from timm package ##############
     print("initilizing model...")
     model = timm.create_model(
-        'vit_base_patch16_224_miil_in21k', pretrained=True)
+        'vit_base_patch16_224_miil_in21k', pretrained=False)
+
     model.eval()
+    model_file_name = './src_files/classes/vit_base_patch16_224_in21k_miil.pth'
+    model.load_state_dict(torch.load(model_file_name))
+
     config = resolve_data_config({}, model=model)
     transform = create_transform(**config)
 
