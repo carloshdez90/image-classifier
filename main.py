@@ -10,13 +10,10 @@ from detector import analyze_image
 from dotenv import load_dotenv
 
 load_dotenv()
-router = APIRouter(prefix="/api")
 
 
 def initialize():
-    #app = FastAPI(root_path="/api", docs_url='/api/docs')
     app = FastAPI()
-    app.include_router(router)
 
     env_vars = {"sso_url":  os.getenv('sso_url'),
                 "sso_realm": os.getenv('sso_realm'),
@@ -38,8 +35,7 @@ class Item(BaseModel):
 app, env_vars = initialize()
 
 
-# @app.post('/classify-image')
-@router.post('/classify-image')
+@app.post('/classify-image')
 def process_image(request: Request, item: Item):
 
     # validate if the provided token is valid
