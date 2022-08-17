@@ -4,7 +4,7 @@ services:
     image: image-classifier:v1
     build: .
     ports:
-      - "80:80"  #localhost port : container exposed port
+      - "8889:80"  #localhost port : container exposed port
     working_dir: /app/
     deploy:
       resources:
