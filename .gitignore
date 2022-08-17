@@ -3,3 +3,4 @@
 gunicorn.sock
 /src_files/classes/vit_base_patch16_224_in21k_miil.pth
 /logs
+ImageNet21k.code-workspace
