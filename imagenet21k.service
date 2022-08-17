@@ -3,10 +3,10 @@ Description=Gunicorn Daemon to deploy ImageNet21k Model with fastAPI
 After=network.target
 
 [Service]
-User=charlie
+User=deploy
 Group=www-data
-WorkingDirectory=/home/charlie/ws/ImageNet21k
-ExecStart=/home/charlie/envs/img21k/bin/gunicorn -c /home/charlie/ws/ImageNet21k/gunicorn_conf.py main:app
+WorkingDirectory=/home/deploy/imagenet21k
+ExecStart=/home/deploy/envs/img21k/bin/gunicorn -c /home/deploy/imagenet21k/gunicorn_conf.py main:app
 
 [Install]
 WantedBy=multi-user.target
