@@ -2,6 +2,8 @@ version: '3.8'
 services:
   api:
     image: image-classifier:v1
+    mem_limit: 2g
+    cpus: 2
     build: .
     ports:
       - "8889:80"  #localhost port : container exposed port
